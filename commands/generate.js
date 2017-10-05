@@ -10,7 +10,30 @@ const MODEL = 'model';
 const CONTROLLER = 'controller';
 const SNIPPETS = [MODEL, CONTROLLER];
 
-module.exports = function helloCommand(program) {
+function createModel(snippet, name, propsList) {
+  // Create an object of properties
+  let properties = '';
+  if (propsList) {
+    _.forEach(propsList, str => {
+      str = str.split(':');
+      if (str.length > 1) {
+        let key = s(str[0]).camelize().value();
+        let value = s(str[1]).capitalize().value();
+        properties += `  ${key}: ${value},\n`;
+      }
+    })        
+  }
+
+  const modelGenerator = plop.getGenerator('model');
+  modelGenerator.runActions({name: name, props: properties}).then(function (result) {
+    if (result.failures.length > 0) {
+      return program.handleError(result.failures[0]);
+    }
+    return program.successMessage(`${name} ${snippet} created!`);
+  });
+}
+
+module.exports = function generateCommand(program) {
 
   program
     .command('generate <snippet> <name> [propsList...]')
@@ -23,28 +46,11 @@ module.exports = function helloCommand(program) {
         return program.errorMessage(`Unknow snippet '${snippet}'. \n Please, run 'nodexp g --help'`);
       }
 
-      // Create an object of properties
-      const properties = [];
-      if (propsList) {
-        _.forEach(propsList, str => {
-          str = str.split(':');
-          if (str.length > 1) {
-            let key = s(str[0]).camelize().value();
-            let value = s(str[1]).capitalize().value();
-            properties.push({[key]: value})
-            //properties[key] = value;
-          }
-        })        
-        console.log('props', properties);
+      switch (snippet) {
+        case MODEL:
+          createModel(...arguments);
+          break;
       }
-
-      const modelGenerator = plop.getGenerator('addProps');
-      modelGenerator.runActions({name: name, props: properties}).then(function (result) {
-        if (result.failures.length > 0) {
-          return program.handleError(result.failures[0]);
-        }
-        return program.successMessage(`${name} ${snippet} created!`);
-      });
 
     })
     .parse(process.argv);

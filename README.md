@@ -1,2 +1,2 @@
-# gexpress
-A simple boilerplate generator for express
+# NodeExp
+A command-line tool to creating Express.js boilerplate

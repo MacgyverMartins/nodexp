@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 const modulePath = "db/models/{{camelCase name}}.model.js";
 
 module.exports = function (plop) {

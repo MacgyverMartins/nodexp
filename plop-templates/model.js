@@ -4,7 +4,6 @@ var timestamps = require('mongoose-timestamp');
 const Schema = mongoose.Schema;
 
 const _modelName_Schema = new mongoose.Schema({
-
 });
 
 _modelName_Schema.plugin(timestamps);

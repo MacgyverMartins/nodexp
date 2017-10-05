@@ -24,20 +24,22 @@ module.exports = function helloCommand(program) {
       }
 
       // Create an object of properties
-      const properties = {};
+      const properties = [];
       if (propsList) {
         _.forEach(propsList, str => {
           str = str.split(':');
           if (str.length > 1) {
             let key = s(str[0]).camelize().value();
             let value = s(str[1]).capitalize().value();
-            properties[key] = value;
+            properties.push({[key]: value})
+            //properties[key] = value;
           }
         })        
+        console.log('props', properties);
       }
 
-      const modelGenerator = plop.getGenerator(snippet);
-      modelGenerator.runActions({name: name}).then(function (result) {
+      const modelGenerator = plop.getGenerator('addProps');
+      modelGenerator.runActions({name: name, props: properties}).then(function (result) {
         if (result.failures.length > 0) {
           return program.handleError(result.failures[0]);
         }

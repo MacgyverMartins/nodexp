@@ -1,4 +1,5 @@
-const modulePath = "./db/models/{{camelCase name}}.model.js";
+const path = require("path");
+const modulePath = path.join(process.cwd(), 'db/models/{{camelCase name}}.model.js');
 
 module.exports = function (plop) {
   // controller generator
@@ -16,7 +17,7 @@ module.exports = function (plop) {
       // Add a new model
       {
         type: 'add',
-        path: './db/models/{{camelCase name}}.model.js',
+        path: modulePath,
         templateFile: 'plop-templates/model.js'
       },
 

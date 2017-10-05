@@ -6,6 +6,7 @@
     "gexpress": "./index.js"
   },
   "dependencies": {
+    "commander": "^2.11.0",
     "node-plop": "^0.9.0"
   },
   "devDependencies": {},

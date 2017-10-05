@@ -1,8 +1,10 @@
 {
   "name": "gexpress",
   "version": "0.0.1",
-  "description": "A simple boilerplate generator for express",
-  "main": "index.js",
+  "description": "A command-line tool for creating Express.js boilerplate",
+  "bin": {
+    "gexpress": "./index.js"
+  },
   "dependencies": {
     "node-plop": "^0.9.0"
   },

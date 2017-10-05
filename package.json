@@ -6,8 +6,11 @@
     "gexpress": "./index.js"
   },
   "dependencies": {
+    "colors": "^1.1.2",
     "commander": "^2.11.0",
-    "node-plop": "^0.9.0"
+    "node-plop": "^0.9.0",
+    "prompt": "^1.0.0",
+    "util": "^0.10.3"
   },
   "devDependencies": {},
   "scripts": {

@@ -11,7 +11,7 @@ module.exports = function helloCommand(program) {
     .usage('<snippet> <name> [propsList...]')
     .action(function(snippet, name, propsList){
       if (snippet !== 'model') {
-        return program.errorMessage(`Unknow snippet '${snippet}'. \n Please, run 'gexpress g --help'`);
+        return program.errorMessage(`Unknow snippet '${snippet}'. \n Please, run 'nodexp g --help'`);
       }
 
       const modelGenerator = plop.getGenerator(snippet);

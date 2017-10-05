@@ -1,9 +1,9 @@
 {
-  "name": "gexpress",
+  "name": "nodexp",
   "version": "0.0.1",
   "description": "A command-line tool for creating Express.js boilerplate",
   "bin": {
-    "gexpress": "./index.js"
+    "nodexp": "./index.js"
   },
   "dependencies": {
     "colors": "^1.1.2",
@@ -18,12 +18,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MacgyverMartins/gexpress.git"
+    "url": "git+https://github.com/MacgyverMartins/nodexp.git"
   },
   "author": "MacgyverMartins",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MacgyverMartins/gexpress/issues"
+    "url": "https://github.com/MacgyverMartins/nodexp/issues"
   },
-  "homepage": "https://github.com/MacgyverMartins/gexpress#readme"
+  "homepage": "https://github.com/MacgyverMartins/nodexp#readme"
 }

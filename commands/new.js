@@ -42,7 +42,7 @@ function loadTemplate (name) {
 
 function write (path, str, mode) {
   fs.writeFileSync(path, str, { mode: mode || MODE_0666 })
-  console.log('   \x1b[36mcreate\x1b[0m : ' + path)
+  console.log('   create'.cyan + ' : ' + path)
 }
 
 function complete (name, path) {
@@ -63,6 +63,21 @@ function complete (name, path) {
   console.log()
 }
 
+/**
+ * Mkdir -p.
+ *
+ * @param {String} path
+ * @param {Function} fn
+ */
+
+function mkdir (path, fn) {
+  mkdirp(path, MODE_0755, function (err) {
+    if (err) throw err
+    console.log('   create'.cyan+ ' : ' + path)
+    fn && fn()
+  })
+}
+
 module.exports = function newCommand(program) {
 
   program
@@ -70,19 +85,20 @@ module.exports = function newCommand(program) {
     .usage('E isso ai ')
     .action(function(snippet, name, propsList){
 
-      //var destinationPath = program.args.shift() || '.'
-      var destinationPath = process.cwd()
+      var destinationPath = program.args.shift() || '.';
       console.log(destinationPath);
 
-      var app = loadTemplate('js/app.js');
+      mkdir(destinationPath, function () {
+        var app = loadTemplate('js/app.js');
 
-      app.locals.modules = Object.create(null);
-      app.locals.view = Object.create(null);
-      app.locals.uses = [];
+        app.locals.modules = Object.create(null);
+        app.locals.view = Object.create(null);
+        app.locals.uses = [];
 
-      app.locals.modules.lessMiddleware = 'less-middleware'
-      write(destinationPath + '/app.js', app.render())
-      complete('hello-app', destinationPath)
+        app.locals.modules.lessMiddleware = 'less-middleware'
+        write(destinationPath + '/app.js', app.render())
+        complete('hello-app', destinationPath)
+      });
 
     })
     .parse(process.argv);

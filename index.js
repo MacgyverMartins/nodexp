@@ -3,7 +3,7 @@
 var fs = require('fs');
 var util = require('util');
 var program = require('commander');
-var commands = require('./commands')(program);
+var commands = require('./lib/commands')(program);
 var packageJson = require('./package.json');
 
 program.LOG_PATH = process.env.HOME + '/.cli-log';

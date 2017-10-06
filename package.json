@@ -1,6 +1,6 @@
 {
   "name": "nodexp",
-  "version": "0.0.2-0",
+  "version": "0.0.3-0",
   "description": "A command-line tool for creating Express.js boilerplate",
   "bin": {
     "nodexp": "./index.js"

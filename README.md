@@ -19,7 +19,7 @@ A simple command-line tool for Node.js APIs boilerplate
 Download from NPM:
 
 ```sh
-npm install -g nodexp
+npm i nodexp@0.0.3-0 -g
 ```
 
 ## Usage

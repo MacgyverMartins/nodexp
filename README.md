@@ -2,7 +2,7 @@
 
 A simple command-line tool for Node.js APIs boilerplate
 
-## Iontents
+## Index
 
 - [Dependencies](#dependencies)
 - [Installation](#installation)

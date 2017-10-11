@@ -15,6 +15,7 @@ A simple command-line tool for Node.js APIs boilerplate, inspirade on Ruby on Ra
 
 - [Node.js v6+](https://nodejs.org)
 - [NPM v3+](https://www.npmjs.com)
+- [MongoDB 3.4](https://docs.mongodb.com/manual/installation)
 
 ## Installation
 

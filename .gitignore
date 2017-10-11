@@ -178,4 +178,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+.vim-bookmarks
+./**/.vim-bookmarks
 # End of https://www.gitignore.io/api/vim,node,linux,macos,windows,sublimetext,visualstudiocode

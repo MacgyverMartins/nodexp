@@ -22,7 +22,7 @@ A simple command-line tool for Node.js APIs boilerplate, inspirade on Ruby on Ra
 Download from NPM:
 
 ```sh
-npm i nodexp@0.0.3-0 -g
+npm install -g nodexp
 ```
 
 ## Usage

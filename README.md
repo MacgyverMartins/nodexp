@@ -2,6 +2,8 @@
 
 A simple command-line tool for Node.js APIs boilerplate, inspirade on Ruby on Rails and [Express generator](https://github.com/expressjs/generator)
 
+[![NPM](https://nodei.co/npm/nodexp.png?compact=true)](https://npmjs.org/package/nodexp)
+
 ## Index
 
 - [Dependencies](#dependencies)

@@ -4,6 +4,8 @@ A simple command-line tool for Node.js APIs boilerplate, inspirade on Ruby on Ra
 
 [![NPM](https://nodei.co/npm/nodexp.png?compact=true)](https://npmjs.org/package/nodexp)
 
+> :warning::warning: This module is on development mode and it is not ready to be used in real web applications yet :warning::warning:
+
 ## Index
 
 - [Dependencies](#dependencies)
@@ -27,6 +29,26 @@ npm install -g nodexp
 
 ## Usage
 `nodexp <command>`
+
+## Quick Start
+
+Create a new project:
+```sh
+nodexp new awesome-api
+```
+
+Install the dependencies:
+```sh
+cd awesome-api
+npm install
+```
+
+Run your app:
+```sh
+npm start
+```
+
+Visit `localhost:3000`
 
 ## Commands
 
@@ -60,19 +82,13 @@ See the [boilerplate section](#boilerplates) below to get a list of available ge
 All those boilerplates can be generated through `nodexp generate` command.
 
 ### model
+*`nodexp generate model <model-name>`*
 
-Generate a new model at `/model` directory
-
-```sh
-nodexp generate model <model-name>
-```
-e.g
+Creates a new model inside the `/model` directory
 ```sh
 nodexp generate model User
 ```
-You can pass some initial properties and its respective type
-
-e.g
+You also can pass some initial properties and their respective types
 ```sh
 nodexp g model User name:string age:number
 ```

@@ -96,3 +96,13 @@ nodexp g model User name:string age:number
 ## Support
 
 Please [open an issue](https://github.com/MacgyverMartins/nodexp/issues/new) for support.
+
+
+## Roadmap
+- [ ] Controller/Routes boilerplate generetor
+- [ ] Model boilerplate generetor
+- [ ] Add migrations
+- [ ] Add support to SQL Databases
+- [ ] Add default authentication (Like Meteor.js)
+- [ ] Add pattern/support to call external Hooks
+- [ ] Add pattern/support to call external Services

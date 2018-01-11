@@ -99,6 +99,7 @@ Please [open an issue](https://github.com/MacgyverMartins/nodexp/issues/new) for
 
 
 ## Roadmap
+- [ ] Organize the APP in modules
 - [ ] Controller/Routes boilerplate generetor
 - [ ] Model boilerplate generetor
 - [ ] Add migrations
